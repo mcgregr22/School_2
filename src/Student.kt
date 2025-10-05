@@ -10,12 +10,12 @@ class Student(
 
     fun enrollCourse(course: Course) {
         courses.add(course)
-        course.addStudent(this) // biar hubungan 2 arah sesuai UML
+        course.addStudent(this)
     }
 
     fun joinOrganisation(organisation: StudentOrganisation) {
         this.organisation = organisation
-        organisation.addMember(this) // biar konsisten dengan UML
+        organisation.addMember(this)
     }
 
     override fun display() {

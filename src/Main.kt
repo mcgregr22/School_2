@@ -1,14 +1,27 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    val initialSubjects = listOf(
+        Subject("Matematika Minat", "MTK-01"),
+        Subject("Biologi", "BIO-01"),
+        Subject("Fisika", "FSK-01")
+    )
+    println("Memulai proses pembuatan kurikulum")
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+    if (initialSubjects.isNotEmpty()) {
+
+        println("List subject terdeteksi ada isinya. ")
+
+        val schoolCurriculum = Curriculum(initialSubjects)
+
+        println("Objek Kurikulum berhasil dibuat.")
+        println("Mata pelajaran di dalamnya:")
+        schoolCurriculum.subjectList.forEach { subject ->
+            println("- ${subject.name} (${subject.code})")
+        }
+
+    } else {
+
+        println("Error: Tidak bisa membuat kurikulum karena daftar mata pelajaran kosong.")
     }
+
+    println("\nProses selesai.")
 }
